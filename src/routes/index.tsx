@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { dict, WHATSAPP_NUMBER, type Lang } from "@/lib/i18n";
+import hero from "@/assets/hero.jpg";
 import cleaner from "@/assets/cleaner.jpg";
 import doula from "@/assets/doula.jpg";
 import contractor from "@/assets/contractor.jpg";
@@ -57,13 +58,36 @@ function Index() {
       </header>
 
       <main id="top" lang={lang}>
-        <section className="mx-auto max-w-6xl px-5 pb-12 pt-16 md:pt-24">
-          <span className="inline-block rounded-full bg-sky px-4 py-1.5 text-sm font-semibold text-secondary-foreground">{t.tagline}</span>
-          <h1 className="mt-6 max-w-4xl text-4xl font-extrabold leading-[1.05] tracking-tight md:text-7xl">{t.heroTitle}</h1>
-          <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">{t.heroSub}</p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a href={wa} target="_blank" rel="noreferrer" className="rounded-full bg-accent px-7 py-3.5 font-bold text-accent-foreground transition hover:opacity-90">{t.heroCta}</a>
-            <a href="#plans" className="rounded-full border-2 border-primary px-7 py-3 font-bold transition hover:bg-primary hover:text-primary-foreground">{t.heroCta2}</a>
+        <section className="relative isolate overflow-hidden">
+          <img
+            src={hero}
+            alt="A cleaning business owner arriving at a client's home with her caddy"
+            width={1920}
+            height={1088}
+            loading="eager"
+            decoding="async"
+            className="absolute inset-0 -z-10 h-full w-full object-cover object-[72%_center] grayscale"
+          />
+          <div
+            aria-hidden
+            className="absolute inset-0 -z-10 bg-gradient-to-r from-background via-background/85 to-background/25"
+          />
+          <div
+            aria-hidden
+            className="absolute inset-0 -z-10 bg-background/70 md:bg-background/10"
+          />
+          <div
+            aria-hidden
+            className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-background to-transparent"
+          />
+          <div className="mx-auto flex min-h-[520px] max-w-6xl flex-col justify-center px-5 py-16 md:min-h-[620px] md:py-24">
+            <span className="inline-block w-fit rounded-full bg-sky px-4 py-1.5 text-sm font-semibold text-secondary-foreground">{t.tagline}</span>
+            <h1 className="mt-6 max-w-4xl text-4xl font-extrabold leading-[1.05] tracking-tight md:text-7xl">{t.heroTitle}</h1>
+            <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">{t.heroSub}</p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href={wa} target="_blank" rel="noreferrer" className="rounded-full bg-accent px-7 py-3.5 font-bold text-accent-foreground transition hover:opacity-90">{t.heroCta}</a>
+              <a href="#plans" className="rounded-full border-2 border-primary px-7 py-3 font-bold transition hover:bg-primary hover:text-primary-foreground">{t.heroCta2}</a>
+            </div>
           </div>
         </section>
 
